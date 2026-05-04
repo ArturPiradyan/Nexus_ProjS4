@@ -10,7 +10,6 @@ class Node {
     }
 }
 
-// Represents a path between two locations
 class Edge {
     String targetNodeId;
     double distance;
@@ -29,7 +28,6 @@ class Edge {
     }
 }
 
-
 class NodeDistance {
     String nodeId;
     double distance;
@@ -40,5 +38,51 @@ class NodeDistance {
     }
 }
 
+class AreaStatus {
+    private final String nodeId;
+    private final double occupancyPercent;
+    private final double averageCongestionFactor;
+    private final int connectionCount;
+    private final String availabilityLabel;
+    private final String congestionLabel;
 
+    public AreaStatus(
+            String nodeId,
+            double occupancyPercent,
+            double averageCongestionFactor,
+            int connectionCount,
+            String availabilityLabel,
+            String congestionLabel
+    ) {
+        this.nodeId = nodeId;
+        this.occupancyPercent = occupancyPercent;
+        this.averageCongestionFactor = averageCongestionFactor;
+        this.connectionCount = connectionCount;
+        this.availabilityLabel = availabilityLabel;
+        this.congestionLabel = congestionLabel;
+    }
 
+    public String getNodeId() {
+        return nodeId;
+    }
+
+    public double getOccupancyPercent() {
+        return occupancyPercent;
+    }
+
+    public double getAverageCongestionFactor() {
+        return averageCongestionFactor;
+    }
+
+    public int getConnectionCount() {
+        return connectionCount;
+    }
+
+    public String getAvailabilityLabel() {
+        return availabilityLabel;
+    }
+
+    public String getCongestionLabel() {
+        return congestionLabel;
+    }
+}
